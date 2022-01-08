@@ -5,6 +5,7 @@ import AddEmployee from "./Pages/AddEmployee/AddEmployee";
 import AddMultiEmployee from "./Pages/AddMultiEmployee/AddMultiEmployee";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Footer from "./Pages/Shared/Footer/Footer";
+import ContactUs from "./Pages/ContactUs/ContactUs";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/AddEmployee" element={<AddEmployee />} />
-          <Route path="/AddMultiEmployee" element={<AddMultiEmployee />} />
+          <Route path="/addEmployee" element={<AddEmployee />} />
+          <Route path="/addMultiEmployee" element={<AddMultiEmployee />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

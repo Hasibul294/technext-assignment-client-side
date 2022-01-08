@@ -1,0 +1,16 @@
+.banner{
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.pexels.com/photos/5989926/pexels-photo-5989926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner-info{
+    color: whitesmoke;
+}
+.info-header{
+    line-height: 0%;
+}

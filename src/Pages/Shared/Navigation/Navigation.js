@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import icon from "../../../images/hr.png";
 
 const Navigation = () => {
   return (
@@ -8,8 +9,19 @@ const Navigation = () => {
       <Container>
         <Navbar.Brand as={NavLink} to="/home">
           <div className="d-flex">
-            <img style={{ width: "50px" }} className="me-2" src="" alt="" />
-            <span className="ms-2 mb-0">HR.Pro</span>
+            <img
+              style={{
+                width: "40px",
+                backgroundColor: "#75d98e",
+                padding: "3px",
+                borderRadius: "8px",
+              }}
+              src={icon}
+              alt=""
+            />
+            <span style={{ color: "#f57622" }} className="ms-1 fs-6">
+              .Pro
+            </span>
           </div>
         </Navbar.Brand>
         <Navbar.Toggle />

@@ -1,4 +1,5 @@
 import React from "react";
+import icon from "../../../images/hr.png";
 
 const Footer = () => {
   return (
@@ -6,11 +7,21 @@ const Footer = () => {
       <div className="bg-dark p-3 text-white">
         <div className="py-5 d-lg-flex justify-content-around">
           <div>
-            <img style={{ width: "50px", marginLeft: "5px" }} src="" alt="" />
-            <h3>
-              HR.
-              <span className="text-color">Pro</span>
-            </h3>
+            <div className="mb-3 d-flex justify-content-center">
+              <img
+                style={{
+                  width: "40px",
+                  backgroundColor: "#75d98e",
+                  padding: "3px",
+                  borderRadius: "8px",
+                }}
+                src={icon}
+                alt=""
+              />
+              <span style={{ color: "#f57622" }} className="ms-1">
+                .Pro
+              </span>
+            </div>
             <p className="mb-0">"We provide service,</p>
             <p className="mt-0">and best solutions"</p>
           </div>
