@@ -26,7 +26,7 @@ const ContactUs = () => {
               <a href="hasibulhasan294@gmail.com">hasibulhasan@gmail.com</a>
             </p>
           </div>
-          <div data-aos="fade-left" className="col-md-8">
+          <div className="col-md-8">
             <p className="mb-0">Drop Us A Line</p>
             <hr className="w-50 mb-4" />
             <form className="row g-3 bg-secondary bg-opacity-50 rounded pb-3">

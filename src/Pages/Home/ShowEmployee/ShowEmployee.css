@@ -22,20 +22,6 @@ td {
     background-color: rgb(205, 235, 253);
 }
 
-form {
-    display: flex;
-    gap: 5px;
-}
-
-form td:last-child {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-form * {
-    font-size: 20px;
-}
-
 @media screen and (max-width:600px){
     .table-container {
         padding: 10px;

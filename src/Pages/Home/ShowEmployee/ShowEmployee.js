@@ -25,7 +25,7 @@ const ShowEmployee = () => {
           <tbody>
             {employees.map((employee) => (
               <tr key={employee.id}>
-                <td>{employee.fastName}</td>
+                <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
                 <td>{employee.email}</td>
                 <td>{employee.phoneNumber}</td>
