@@ -13,6 +13,7 @@ const AddMultiEmployee = () => {
   };
   return (
     <div className="my-4">
+      <title>AddMultiple</title>
       <h2>Add Multiple Employee</h2>
       <hr className="mb-5 border-bottom border-4 border-success w-25 mx-auto" />
       <div className="drag-drop">

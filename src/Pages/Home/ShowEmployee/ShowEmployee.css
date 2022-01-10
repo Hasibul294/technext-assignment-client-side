@@ -22,6 +22,22 @@ td {
     background-color: rgb(205, 235, 253);
 }
 
+.pagination{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.pagination button{
+    padding: 0 15px;
+}
+
+.pagination .selected{
+    background-color: rgb(41, 41, 194);
+    color: whitesmoke;
+}
+
 @media screen and (max-width:600px){
     .table-container {
         padding: 10px;

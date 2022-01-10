@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div id="contact" className="bg-light">
+    <div id="contact">
       <title>Contact</title>
       <div className="container text-start py-3 mb-5">
         <div className="contact-header">
