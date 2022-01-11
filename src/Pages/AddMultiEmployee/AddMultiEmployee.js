@@ -53,7 +53,7 @@ const AddMultiEmployee = () => {
           handleChange={handleChange}
           name="file"
           types={fileTypes}
-          hoverTitle
+          id="drag"
         />
         <p>{file ? `File name: ${file.name}` : "No files uploaded yet"}</p>
         <button

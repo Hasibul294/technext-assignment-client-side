@@ -9,11 +9,11 @@
     height: 60vh;
     
 }
-.iciELI {
+label {
     width: 100%;
     height: 200px !important;
     box-sizing: border-box;
 }
-.iciELI span {
+label span {
     font-size: 15px ;
 }
