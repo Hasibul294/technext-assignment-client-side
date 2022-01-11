@@ -10,7 +10,6 @@ const ShowEmployee = () => {
     fetch(`http://localhost:5000/addEmployee?page=${page}&&size=${pageSize}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setEmployees(data.result);
         const pageNumber = Math.ceil(data.dataCount / pageSize);
         setPageCount(pageNumber);
