@@ -37,7 +37,7 @@ const Navigation = () => {
               Add Multiple
             </Nav.Link>
             <Nav.Link as={NavLink} to="/contact">
-              Contact
+              Contact Us
             </Nav.Link>
           </Nav>
           <Navbar.Text>

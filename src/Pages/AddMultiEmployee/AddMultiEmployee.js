@@ -1,15 +1,43 @@
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import "./AddMultiEmployee.css";
+import { parse } from "papaparse";
 
 const fileTypes = ["csv"];
 
 const AddMultiEmployee = () => {
   const [file, setFile] = useState(null);
-  console.log(file);
+  const [infoData, setInfoData] = useState([]);
+  const [count, setCount] = useState(0);
+  const [flag, setFlag] = useState(true);
+
+  // const data = async (file) => {
+  //   console.log("this is data");
+  //   const text = await file.text();
+  //   console.log(text);
+  //   console.log("this is test");
+  // };
 
   const handleChange = (file) => {
-    setFile(file);
+    if (file.type === "application/vnd.ms-excel") {
+      setFile(file);
+      const run = async () => {
+        const text = await file.text();
+        const data = parse(text, { header: true });
+        const dataLength = data.data.length;
+        let infoLength = 0;
+        data.data.map((info) => {
+          if (info.firstName && info.lastName && info.companyName) {
+            return setInfoData(info);
+          } else {
+            return setCount(infoLength + 1);
+          }
+        });
+      };
+      run();
+    } else {
+      alert("Please select a CSV file");
+    }
   };
   return (
     <div className="my-4">
