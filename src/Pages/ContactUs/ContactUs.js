@@ -66,7 +66,10 @@ const ContactUs = () => {
                 />
               </div>
               <div className="col-12">
-                <label for="exampleFormControlTextarea1" className="form-label">
+                <label
+                  htmlFor="exampleFormControlTextarea1"
+                  className="form-label"
+                >
                   Example textarea
                 </label>
                 <textarea

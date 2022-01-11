@@ -2,21 +2,13 @@ import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import "./AddMultiEmployee.css";
 import { parse } from "papaparse";
+import axios from "axios";
 
 const fileTypes = ["csv"];
 
 const AddMultiEmployee = () => {
   const [file, setFile] = useState(null);
-  const [infoData, setInfoData] = useState([]);
-  const [count, setCount] = useState(0);
-  const [flag, setFlag] = useState(true);
-
-  // const data = async (file) => {
-  //   console.log("this is data");
-  //   const text = await file.text();
-  //   console.log(text);
-  //   console.log("this is test");
-  // };
+  const [infoData, setInfoData] = useState();
 
   const handleChange = (file) => {
     if (file.type === "application/vnd.ms-excel") {
@@ -24,20 +16,28 @@ const AddMultiEmployee = () => {
       const run = async () => {
         const text = await file.text();
         const data = parse(text, { header: true });
-        const dataLength = data.data.length;
-        let infoLength = 0;
-        data.data.map((info) => {
-          if (info.firstName && info.lastName && info.companyName) {
-            return setInfoData(info);
-          } else {
-            return setCount(infoLength + 1);
-          }
-        });
+        // console.log(data);
+        setInfoData(data);
       };
       run();
     } else {
       alert("Please select a CSV file");
+      setFile(null);
     }
+  };
+
+  const handleSubmit = (value) => {
+    let array = [];
+    value.data.map((info) => {
+      if (info.firstName && info.lastName && info.email) {
+        array.push(info);
+      }
+    });
+    axios.post("http://localhost:5000/addMultiEmployee", array).then((res) => {
+      if (res.data.insertId) {
+        alert("Multiple Employee Added Successfully");
+      }
+    });
   };
   return (
     <div className="my-4">
@@ -56,6 +56,12 @@ const AddMultiEmployee = () => {
           hoverTitle
         />
         <p>{file ? `File name: ${file.name}` : "No files uploaded yet"}</p>
+        <button
+          className="btn btn-primary"
+          onClick={() => handleSubmit(infoData)}
+        >
+          Send to database
+        </button>
       </div>
     </div>
   );
